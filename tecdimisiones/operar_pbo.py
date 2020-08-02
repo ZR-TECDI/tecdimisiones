@@ -8,19 +8,12 @@ def subir_pbo(mision):
     nombre = mision.filename
 
     if validar_pbo(nombre):
-        mision.save(mision.save(path.join('public', nombre)))
-
         try:
             with open(path.join('public', mision.filename), "rb") as binario:
                 enviar_archivo(mision.filename, binario)
         except Exception as e:
             return str(e)
         else:
-            try:
-                remove(f"public/{nombre}")
-            except:
-                pass
-            
             cache_misiones.create_cache()
             return None
     else:

@@ -7,7 +7,7 @@ from flask import render_template, request, redirect, url_for
 from flask_simplelogin import login_required
 from urllib.parse import quote
 from .cond_decorator import conditional_decorator
-
+import os
 
 @app.route('/')
 @conditional_decorator(login_required, not local)
@@ -32,10 +32,16 @@ def subir_mision():
     if request.method == "POST":
         mision = request.files["mision"]
         logger.log(f" intentan subir archivo: {mision}")
+        mision.save(mision.save(os.path.join('public', mision.filename)))
 
         resultado = subir_pbo(mision)
 
         if resultado is None:
+            try:
+                os.remove(f"public/{mision.filename}")
+            except:
+                pass
+
             return redirect(url_for("exito"))
         else:
             error_msg = f"Error intentando subir archivo {mision.filename}.\n{resultado}"
