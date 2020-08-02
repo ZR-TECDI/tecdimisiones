@@ -1,9 +1,4 @@
-from tecdimisiones import app, logger
-
+from tecdimisiones import app
 
 if __name__ == "__main__":
-    try:
-        app.run(host="0.0.0.0", debug=True, port="8000")
-    except Exception as e:
-        logger.log(str(e))
-        raise e
+    app.run(host="0.0.0.0", debug=True, port="8000")
