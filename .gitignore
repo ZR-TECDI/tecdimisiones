@@ -5,3 +5,4 @@ secrets
 mision_cache.json
 registro.log
 .idea/
+*.egg-info/
