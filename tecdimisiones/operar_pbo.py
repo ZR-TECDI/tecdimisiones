@@ -1,7 +1,7 @@
 from . import logger
 from lib.ftper import eliminar_archivo, enviar_archivo, all_errors
 from . import cache_misiones
-from os import path
+from os import path, remove
 
 
 def subir_pbo(mision):
@@ -16,6 +16,11 @@ def subir_pbo(mision):
         except Exception as e:
             return str(e)
         else:
+            try:
+                remove(f"public/{nombre}")
+            except:
+                pass
+            
             cache_misiones.create_cache()
             return None
     else:
