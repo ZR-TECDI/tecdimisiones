@@ -8,7 +8,6 @@ authors = ["Andrés Riquelme <andresfranco.rs@gmail.com>"]
 python = "^3.7"
 flask = "^1.1.2"
 flask_simplelogin = "^0.0.7"
-pandas = "^1.1.0"
 giphy_client = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
