@@ -36,10 +36,9 @@ def jsonizar_misiones(misiones: list):
         fecha = f"{mision[0]} {mision[1]}"
         nombre = humanizar_nombre(archivo[0])
         isla = archivo[1]
-        protegida = comprobar_protegida(archivo)
         archivo = mision[3]
 
-        mision_dct["misiones"].append([nombre, isla, fecha, protegida, archivo])
+        mision_dct["misiones"].append([nombre, isla, fecha, archivo])
 
     return mision_dct
 
@@ -59,15 +58,6 @@ def humanizar_nombre(nombre: str):
             nombre = nombre.replace(key, html_tokens[key])
 
     return nombre
-
-
-def comprobar_protegida(nombre):
-    protegidas = ["base_alpha_"]
-
-    for p in protegidas:
-        if p in nombre:
-            return True
-    return False
 
 
 def get_cache():

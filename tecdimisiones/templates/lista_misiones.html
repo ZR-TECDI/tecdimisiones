@@ -17,12 +17,12 @@
     <td>{{ mision[1] }}</td>
     <td>{{ mision[2] }}</td>
     <td>
-        <a href="{{ url_for("montar") }}?archivo={{ mision[4] }}">
+        <a href="{{ url_for("montar") }}?archivo={{ mision[3] }}">
             <button type="submit" class="btn btn-primary">&#127918;</button>
         </a>
     </td>
     <td>
-        <a href="{{ url_for("borrar") }}?archivo={{ mision[4] }}&index={{ loop.index - 1 }}">
+        <a href="{{ url_for("borrar") }}?archivo={{ mision[3] }}">
             <button type="submit" class="btn btn-primary">&#10006;</button>
         </a>
     </td>
@@ -31,5 +31,12 @@
 
 </table>
 <br>
+<br>
+
+<a href="{{ url_for("regenerar_listado") }}">
+            <button type="submit" class="btn btn-primary">Regenerar lista de misiones</button>
+</a>
+<br>
+<span>Utiliza este botón si hay errores en esta lista</span>
 <br>
 {% endblock %}

@@ -50,11 +50,11 @@ def enviar_archivo(archivo_nombre, archivo_binario):
     except all_errors as e:
         logger.log(str(e))
         cerrar_conexion()
-        return False, e
+        return e
     else:
         logger.log(f"archivo {archivo_nombre} subido!")
         cerrar_conexion()
-        return True, None
+        return None
 
 
 def eliminar_archivo(archivo_nombre):
