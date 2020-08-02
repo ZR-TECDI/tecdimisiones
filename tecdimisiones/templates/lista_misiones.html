@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Misiones{% endblock %}
+
+{% block content %}
+<h1>Misiones</h1>
+<table class="table table-dark">
+<tr>
+    <th>Misión</th>
+    <th>Isla</th>
+    <th>Fecha</th>
+    <th>Montar</th>
+    <th>Eliminar</th>
+</tr>
+{% for mision in cache %}
+<tr>
+    <td>{{ mision[0] }}</td>
+    <td>{{ mision[1] }}</td>
+    <td>{{ mision[2] }}</td>
+    <td>
+        <a href="{{ url_for("montar") }}?archivo={{ mision[4] }}">
+            <button type="submit" class="btn btn-primary">&#127918;</button>
+        </a>
+    </td>
+    <td>
+        <a href="{{ url_for("borrar") }}?archivo={{ mision[4] }}&index={{ loop.index - 1 }}">
+            <button type="submit" class="btn btn-primary">&#10006;</button>
+        </a>
+    </td>
+</tr>
+{% endfor %}
+
+</table>
+<br>
+<br>
+{% endblock %}

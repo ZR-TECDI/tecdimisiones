@@ -1,0 +1,7 @@
+secrets
+.venv/
+/__pycache__/
+.env
+mision_cache.json
+registro.log
+.idea/

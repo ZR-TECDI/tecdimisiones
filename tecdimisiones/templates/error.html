@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}ERROR{% endblock %}
+
+{% block content %}
+<h1>Oops, algo salió mal...</h1>
+<span>Uhmm, ojalá no fuese así, pero parece que algo se rompió...</span>
+<br>
+<img src="{{ gif }}" />
+<br>
+<span>Contacta a Riquelme y muéstrale esto, por favor:</span>
+<br>
+<br>
+<pre size="50%">
+  <code>
+     {{ error_msg }}
+  </code>
+</pre>
+
+{% endblock %}

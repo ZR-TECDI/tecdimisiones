@@ -1,0 +1,28 @@
+body, h1,h2,h3,h4,h5,h6 {
+    font-family: "Montserrat", sans-serif
+}
+.w3-row-padding img {
+    margin-bottom: 12px
+}
+
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {
+    margin-left: 120px
+}
+
+th, td {
+  text-align: center;
+}
+
+pre {
+    font-family: Consolas, "courier new", serif;
+  color: #33861b;
+  background-color: #000000;
+  padding: 2px;
+  font-size: 105%;
+}
+
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {
+    #main {margin-left: 0}
+}

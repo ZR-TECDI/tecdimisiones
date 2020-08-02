@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Subir misión{% endblock %}
+
+{% block content %}
+    <h1>Sube tu misión aquí</h1>
+    <span>Debe estar en formato .pbo, utiliza
+        <a href=https://www.armaholic.com/page.php?id=16369>esta herramienta</a>
+        para convertir tu carpeta de misión
+        en .pbo
+    </span>
+    <br>
+
+    <form action="/subirmision" method="POST" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label>Archivo:</label>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" name="mision" id="mision">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Subir</button>
+
+    </form>
+{% endblock %}
